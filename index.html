@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LG 정수기 가입 가이드</title>
+<meta name="description" content="LG 퓨리케어 WD523V 6년 약정 + 롯데카드 할인 소비자용 정리">
+<meta name="robots" content="noindex">
+<style>
+:root{
+  --bg:#f5f6f8; --card:#ffffff; --text:#1b1d22; --sub:#5d6470; --line:#e3e6ea;
+  --accent:#d6342c; --accent-soft:#fdecea; --blue:#1f5fd6; --blue-soft:#e8f0fe;
+  --good:#127a46; --good-soft:#e6f5ec; --warn:#a35a00; --warn-soft:#fff3e0;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#121417; --card:#1c1f24; --text:#eceef1; --sub:#a2a9b4; --line:#2e333a;
+    --accent:#ff6b62; --accent-soft:#3a1f1d; --blue:#7aa7ff; --blue-soft:#1d2a40;
+    --good:#5fd39a; --good-soft:#163024; --warn:#ffb85c; --warn-soft:#3a2a14;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;
+  font-size:16px;line-height:1.6;padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:20px 16px 16px}
+header .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:99px}
+h1{font-size:22px;line-height:1.35;margin:8px 0 4px}
+header p{margin:0;color:var(--sub);font-size:14px}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);
+  display:flex;gap:6px;overflow-x:auto;padding:8px 12px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;font-size:14px;color:var(--sub);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--line);white-space:nowrap}
+nav a:active{background:var(--blue-soft)}
+main{max-width:720px;margin:0 auto;padding:12px 16px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:12px 0;scroll-margin-top:60px}
+h2{font-size:18px;margin:0 0 12px}
+h3{font-size:16px;margin:18px 0 8px}
+p{margin:8px 0}
+.muted{color:var(--sub);font-size:14px}
+.big{font-size:30px;font-weight:800;letter-spacing:-.5px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hero div{background:var(--bg);border-radius:12px;padding:12px}
+.hero .lbl{font-size:13px;color:var(--sub)}
+.hero .val{font-size:22px;font-weight:800}
+.hero .val small{font-size:13px;font-weight:600;color:var(--sub)}
+.callout{border-radius:12px;padding:12px 14px;margin:12px 0;font-size:15px}
+.callout.warn{background:var(--warn-soft);color:var(--text);border-left:4px solid var(--warn)}
+.callout.good{background:var(--good-soft);border-left:4px solid var(--good)}
+.callout.info{background:var(--blue-soft);border-left:4px solid var(--blue)}
+.callout b{font-weight:700}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th,.tbl td{border-bottom:1px solid var(--line);padding:9px 6px;text-align:right;vertical-align:top}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.tbl thead th{color:var(--sub);font-weight:600;font-size:13px}
+.tbl tr.hl td{background:var(--accent-soft);font-weight:700}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+ul.clean{padding-left:20px;margin:8px 0}
+ul.clean li{margin:5px 0}
+/* calculator */
+.seg{display:flex;background:var(--bg);border-radius:10px;padding:3px;gap:3px;margin:6px 0 12px}
+.seg button{flex:1;border:0;background:transparent;color:var(--sub);font:inherit;font-size:14px;padding:9px 4px;border-radius:8px;cursor:pointer}
+.seg button.on{background:var(--card);color:var(--text);font-weight:700;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.fld{font-size:13px;color:var(--sub);font-weight:600}
+.chk{display:flex;align-items:flex-start;gap:10px;margin:10px 0;font-size:15px}
+.chk input{width:20px;height:20px;margin-top:2px;flex:0 0 auto}
+.result{background:var(--bg);border-radius:12px;padding:14px;margin-top:12px}
+.result .row{display:flex;justify-content:space-between;padding:4px 0;font-size:15px}
+.result .row.total{border-top:1px solid var(--line);margin-top:6px;padding-top:10px;font-weight:800;font-size:17px}
+.result .monthly{font-size:28px;font-weight:800;color:var(--accent)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0}
+.steps li{counter-increment:s;position:relative;padding:8px 0 8px 38px;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.src a{color:var(--blue);word-break:break-all}
+footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
+/* chat */
+#chatFab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:20;border:0;border-radius:99px;
+  background:var(--blue);color:#fff;font:inherit;font-weight:700;font-size:15px;padding:14px 20px;box-shadow:0 6px 18px rgba(0,0,0,.25);cursor:pointer}
+#chat{position:fixed;inset:0;z-index:30;background:var(--bg);display:none;flex-direction:column}
+#chat.open{display:flex}
+.chat-head{display:flex;align-items:center;gap:8px;padding:12px 12px;background:var(--card);border-bottom:1px solid var(--line);padding-top:calc(12px + env(safe-area-inset-top))}
+.chat-head b{flex:1;font-size:16px}
+.iconbtn{border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:13px;padding:6px 10px;border-radius:8px;cursor:pointer}
+#msgs{flex:1;overflow-y:auto;padding:14px 12px;-webkit-overflow-scrolling:touch}
+.msg{max-width:88%;padding:10px 13px;border-radius:14px;margin:6px 0;font-size:15px;line-height:1.55;word-break:break-word}
+.msg.user{margin-left:auto;background:var(--blue);color:#fff;border-bottom-right-radius:4px}
+.msg.bot{background:var(--card);border:1px solid var(--line);border-bottom-left-radius:4px}
+.msg.bot ul{padding-left:18px;margin:4px 0}
+.msg.sys{max-width:100%;text-align:center;color:var(--sub);font-size:13px;background:transparent}
+.chips{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 0;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips button{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:13px;padding:7px 11px;border-radius:99px;cursor:pointer;white-space:nowrap}
+.chat-input{display:flex;gap:8px;padding:10px 12px;padding-bottom:calc(10px + env(safe-area-inset-bottom));background:var(--card);border-top:1px solid var(--line)}
+.chat-input textarea{flex:1;resize:none;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:inherit;font-size:16px;background:var(--bg);color:var(--text);max-height:120px}
+.chat-input button{border:0;background:var(--blue);color:#fff;font:inherit;font-weight:700;border-radius:12px;padding:0 16px;cursor:pointer}
+.chat-input button:disabled{opacity:.5}
+#keyBox{padding:16px;display:none}
+#keyBox.show{display:block}
+#keyBox input{width:100%;padding:12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:16px;background:var(--card);color:var(--text);margin:8px 0}
+#keyBox button{width:100%;padding:12px;border:0;border-radius:10px;background:var(--blue);color:#fff;font:inherit;font-weight:700}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="tag">2026년 11월 기준</span>
+  <h1>LG 퓨리케어 정수기 WD523V<br>6년 약정 + 롯데카드 할인 정리</h1>
+  <p>소비자 입장에서 실제로 얼마를 내는지, 무엇을 조심해야 하는지 한 장에 모았어요.</p>
+</header>
+
+<nav>
+  <a href="#summary">요약</a>
+  <a href="#price">렌탈료</a>
+  <a href="#card">롯데카드</a>
+  <a href="#calc">계산기</a>
+  <a href="#total">6년 총액</a>
+  <a href="#other">다른 카드</a>
+  <a href="#check">체크리스트</a>
+  <a href="#product">제품</a>
+</nav>
+
+<main>
+
+<section id="summary">
+  <h2>한눈에 보기</h2>
+  <div class="hero">
+    <div><div class="lbl">방문관리 6년 (정가)</div><div class="val">35,900<small>원/월</small></div></div>
+    <div><div class="lbl">자가관리 6년 (정가)</div><div class="val">32,900<small>원/월</small></div></div>
+    <div><div class="lbl">롯데카드 최대 할인</div><div class="val">-26,000<small>원/월</small></div></div>
+    <div><div class="lbl">광고 속 최저가</div><div class="val">6,900<small>원~</small></div></div>
+  </div>
+  <div class="callout warn">
+    <b>"월 9,900원 / 6,900원"은 최대치예요.</b> 롯데카드를 <b>정수기 요금 말고 다른 곳에 매달 160만 원 이상</b> 써야 받는 금액이에요. 매달 40만 원쯤 쓴다면 방문관리 기준 <b>월 15,900원</b>이 현실적이에요.
+  </div>
+  <div class="callout info">
+    카드 할인은 카드사가 <b>결제일에 깎아 주는 방식</b>이에요. 렌탈료는 정가대로 나가고, 롯데카드 청구서에서 할인이 빠져요.
+  </div>
+</section>
+
+<section id="price">
+  <h2>월 렌탈료 (카드 할인 전)</h2>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>약정</th><th>방문관리</th><th>자가관리</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>6년</td><td>35,900원</td><td>32,900원</td></tr>
+      <tr><td>5년</td><td>38,900원</td><td>35,900원</td></tr>
+      <tr><td>4년</td><td>43,900원</td><td>40,900원</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <ul class="clean muted">
+    <li><b>방문관리</b>: 6개월마다 기사님이 방문해서 관리 ("6M반값_6개월관리")</li>
+    <li><b>자가관리</b>: 6개월마다 필터를 택배로 받아서 직접 교체 ("6M반값_6개월필터발송")</li>
+    <li>둘의 차이는 월 3,000원, 6년이면 <b>216,000원</b>이에요.</li>
+    <li>출처: 아정당 상품 페이지 표시가 (2026-11-22 조회)</li>
+  </ul>
+</section>
+
+<section id="card">
+  <h2>롯데카드 「LG구독엔로카」 할인 조건</h2>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>전월 사용액<br>(1일~말일)</th><th>카드<br>기본</th><th>LG<br>프로모션</th><th>월 할인<br>합계</th></tr></thead>
+    <tbody>
+      <tr><td>40만 원 미만</td><td>0</td><td>–</td><td>0원</td></tr>
+      <tr><td>40만 원 이상</td><td>13,000</td><td>7,000</td><td><b>20,000원</b></td></tr>
+      <tr><td>80만 원 이상</td><td>18,000</td><td>5,000</td><td><b>23,000원</b></td></tr>
+      <tr><td>160만 원 이상</td><td>26,000</td><td>없음</td><td><b>26,000원</b></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">연회비 20,000원 · 카드 문의 1577-9469</p>
+
+  <h3>꼭 알아야 할 조건</h3>
+  <ul class="clean">
+    <li><b>정수기 요금을 이 카드로 자동이체</b>해야 할인돼요.</li>
+    <li><b>LG 프로모션(+7천/+5천 원)은 AMEX 브랜드로 발급할 때만</b> 붙어요. Mastercard로 만들면 기본 할인만 받아요.</li>
+    <li>LG전자 공지에는 프로모션이 <b>"신규 발급 고객 한정"</b>이라고 되어 있어요. 이미 이 카드가 있다면 꼭 물어보세요.</li>
+    <li>프로모션은 최대 72개월(6년) 동안 매달 받아요.</li>
+    <li><b>정수기 요금은 전월 사용액에 안 들어가요.</b> 다른 결제로 40/80/160만 원을 채워야 해요.</li>
+    <li>카드를 새로 만들면 <b>발급일부터 다음 달 말일까지</b>는 사용액이 40만 원이 안 돼도 13,000원 할인을 줘요.</li>
+  </ul>
+
+  <h3>사용액에 안 들어가는 결제</h3>
+  <p class="muted">무이자할부, 세금(국세·지방세), 4대보험, 학교 납입금·등록금, 아파트관리비, 전기·가스·수도요금, 월세·공공임대료, 상품권·선불카드·포인트 충전, 대중교통·택시·고속버스·고속도로 통행료, 카드론·현금서비스, 연회비·이자·수수료, 취소한 결제 등</p>
+
+  <h3>그 밖의 유의사항</h3>
+  <ul class="clean muted">
+    <li>요금이 할인 한도보다 적으면 요금만큼만 깎아 주고, 남은 한도는 다음 달로 넘어가지 않아요.</li>
+    <li>롯데카드의 다른 결제일 할인과 겹치면 큰 할인 하나만 적용돼요.</li>
+    <li>할인은 자동이체로 등록한 요금이 롯데카드에 청구되는 달부터 시작해요.</li>
+    <li>자동이체 등록: LG전자 고객센터 1544-7777 / LG전자 멤버십 앱(구독 → 납부방법 변경) / LG전자 홈페이지(마이페이지 → 구독 → 계약현황 → 납부 정보변경)</li>
+    <li>카드사의 부가서비스는 카드가 나온 뒤 3년 이상 유지되지만, 그 뒤에는 바뀔 수 있어요. 6년 내내 같은 할인이 보장되지는 않아요.</li>
+  </ul>
+</section>
+
+<section id="calc">
+  <h2>내 실제 요금 계산기</h2>
+  <div class="fld">관리 방식</div>
+  <div class="seg" id="segCare">
+    <button data-v="visit" class="on">방문관리</button>
+    <button data-v="self">자가관리</button>
+  </div>
+  <div class="fld">롯데카드 한 달 사용액 (정수기 요금 제외)</div>
+  <div class="seg" id="segSpend">
+    <button data-v="0">40만 미만</button>
+    <button data-v="40" class="on">40만+</button>
+    <button data-v="80">80만+</button>
+    <button data-v="160">160만+</button>
+  </div>
+  <label class="chk"><input type="checkbox" id="chkPromo" checked><span>AMEX로 새로 발급해서 LG 프로모션 받기</span></label>
+  <label class="chk"><input type="checkbox" id="chkFee" checked><span>6년치 연회비(12만 원)도 합쳐서 보기</span></label>
+  <div class="result">
+    <div class="muted">매달 실제로 내는 돈</div>
+    <div class="monthly" id="rMonthly">-</div>
+    <div class="row"><span>정가 렌탈료</span><span id="rBase">-</span></div>
+    <div class="row"><span>카드 할인</span><span id="rDisc">-</span></div>
+    <div class="row total"><span>6년(72개월) 총 부담</span><span id="rTotal">-</span></div>
+    <div class="row"><span class="muted">할인 없을 때보다 아끼는 돈</span><span class="muted" id="rSave">-</span></div>
+  </div>
+  <p class="muted">첫 달 특례, 아정당 현금 사은품, 할인 조건 변경은 계산에 넣지 않았어요.</p>
+</section>
+
+<section id="total">
+  <h2>6년 총액 비교 (AMEX 프로모션 받는다고 가정)</h2>
+  <h3>방문관리 (월 35,900원)</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>전월 사용액</th><th>월 납부</th><th>72개월 합계</th></tr></thead>
+    <tbody>
+      <tr><td>할인 없음</td><td>35,900</td><td>2,584,800</td></tr>
+      <tr><td>40만+</td><td>15,900</td><td>1,144,800</td></tr>
+      <tr><td>80만+</td><td>12,900</td><td>928,800</td></tr>
+      <tr><td>160만+</td><td>9,900</td><td>712,800</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <h3>자가관리 (월 32,900원)</h3>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>전월 사용액</th><th>월 납부</th><th>72개월 합계</th></tr></thead>
+    <tbody>
+      <tr><td>할인 없음</td><td>32,900</td><td>2,368,800</td></tr>
+      <tr><td>40만+</td><td>12,900</td><td>928,800</td></tr>
+      <tr><td>80만+</td><td>9,900</td><td>712,800</td></tr>
+      <tr><td>160만+</td><td>6,900</td><td>496,800</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">단위: 원 · 카드 연회비(6년 약 12만 원)는 빠져 있어요.</p>
+</section>
+
+<section id="other">
+  <h2>아정당에 나온 다른 제휴카드</h2>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>카드</th><th>월 최대 할인</th><th>연회비</th></tr></thead>
+    <tbody>
+      <tr><td>LG전자 Platinum 우리카드</td><td>42,000</td><td>25,000</td></tr>
+      <tr class="hl"><td>LG구독엔로카 롯데카드</td><td>26,000</td><td>20,000</td></tr>
+      <tr><td>LG전자 우리카드</td><td>22,000</td><td>15,000</td></tr>
+      <tr><td>아정당 하나카드(PLCC)</td><td>20,000</td><td>29,000</td></tr>
+      <tr><td>LG전자 KB국민카드</td><td>20,000</td><td>15,000</td></tr>
+      <tr><td>The 구독케어 신한카드</td><td>20,000</td><td>22,000~</td></tr>
+      <tr><td>LG전자 플러스 하나카드</td><td>20,000</td><td>23,000</td></tr>
+      <tr><td>NH올원 LG전자 BEST카드</td><td>20,000</td><td>15,000~</td></tr>
+      <tr><td>전북·광주은행 베스트케어</td><td>20,000</td><td>14,000~</td></tr>
+      <tr><td>LG전자 현대카드</td><td>16,000</td><td>20,000</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">"월 최대"를 받으려면 카드마다 필요한 사용액이 달라요. 예를 들어 Platinum 우리카드는 전월 100만 원 이상부터 할인이 시작돼요.</p>
+</section>
+
+<section id="check">
+  <h2>가입 전에 물어볼 것</h2>
+  <ol class="steps">
+    <li><b>아정당 현금 사은품 금액</b>: 페이지에는 금액이 없어서 상담할 때만 알 수 있어요.</li>
+    <li>이미 롯데카드가 있어도 <b>LG 프로모션(+7천/+5천 원)</b>을 받을 수 있는지</li>
+    <li><b>AMEX로 발급</b>해야 프로모션이 붙는지 다시 확인</li>
+    <li>6년 뒤 <b>정수기가 내 것이 되는지(소유권 이전)</b>, 중간에 해지하면 <b>위약금</b>이 얼마인지</li>
+    <li>설치비·등록비가 따로 있는지</li>
+    <li>가정이 아닌 곳(상가 등)에 설치하거나 <b>사업자 명의</b>로 가입할 수 있는지</li>
+    <li>11월 프로모션이 <b>신청한 달·설치한 달·카드 등록한 달</b> 중 어느 것을 기준으로 하는지 (12월에 조건이 바뀔 수 있어요)</li>
+    <li>방문관리와 자가관리 중 무엇을 고를지</li>
+  </ol>
+</section>
+
+<section id="product">
+  <h2>제품 정보</h2>
+  <table class="tbl">
+    <tbody>
+      <tr><td>제품명</td><td>LG 퓨리케어 2025 오브제컬렉션 맞춤출수 정수기 (냉온정)</td></tr>
+      <tr><td>모델</td><td>WD523V</td></tr>
+      <tr><td>색상</td><td>카밍 에센스 화이트 · 베이지 · 핑크 · 크림 스카이</td></tr>
+      <tr><td>필터</td><td>중공사막(UF) 필터 2개</td></tr>
+      <tr><td>살균</td><td>고온살균 + UV살균</td></tr>
+      <tr><td>형태</td><td>데스크형 직수 정수기, 편의기능 16개</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">아정당 구매후기 37건 · 컵 높이에 맞춰 출수 높이를 조절하는 맞춤출수 기능</p>
+</section>
+
+<section class="src">
+  <h2>출처</h2>
+  <ul class="clean muted">
+    <li>아정당 상품 페이지: <a href="https://www.ajd.co.kr/electronics/overview/4020/detail/51432" target="_blank" rel="noopener">ajd.co.kr/…/51432</a></li>
+    <li>LG전자 가전구독 카드혜택: <a href="https://www.lge.co.kr/care-solutions/rentalService-benefits?rental-scrvice=cards" target="_blank" rel="noopener">lge.co.kr/care-solutions/rentalService-benefits</a></li>
+    <li>롯데카드 LG구독엔로카: <a href="https://www.lottecard.co.kr/app/LPBOHAA_V100.lc?bId=96417&vtCdKndC=P15666-A15666" target="_blank" rel="noopener">lottecard.co.kr</a></li>
+  </ul>
+  <p class="muted">2026-11-22에 조사했어요. 가격과 카드 혜택은 매달 바뀔 수 있으니, 가입할 때 상담원에게 최종 조건을 꼭 확인하세요.</p>
+</section>
+
+</main>
+<footer>개인 참고용 정리 · 광고 아님</footer>
+
+<button id="chatFab">💬 궁금한 거 물어보기</button>
+
+<div id="chat" role="dialog" aria-label="AI 질문하기">
+  <div class="chat-head">
+    <b>AI에게 물어보기</b>
+    <button class="iconbtn" id="btnKey">키 설정</button>
+    <button class="iconbtn" id="btnClose">닫기</button>
+  </div>
+  <div id="keyBox">
+    <div class="fld">Gemini API 키</div>
+    <p class="muted">키는 이 기기의 브라우저에만 저장되고, Google Gemini에 질문을 보낼 때만 써요.</p>
+    <input id="keyInput" type="password" autocomplete="off" placeholder="AIza…">
+    <button id="keySave">저장</button>
+    <p><button class="iconbtn" id="keyClear" style="width:auto;background:var(--card);color:var(--text)">이 기기에서 키 지우기</button></p>
+  </div>
+  <div id="msgs"></div>
+  <div class="chips" id="chips">
+    <button>한 달에 40만 원 쓰면 얼마 내?</button>
+    <button>방문관리 vs 자가관리 뭐가 나아?</button>
+    <button>AMEX랑 마스터 차이가 뭐야?</button>
+    <button>관리비 낸 것도 실적에 들어가?</button>
+    <button>상담할 때 뭘 물어봐야 해?</button>
+  </div>
+  <div class="chat-input">
+    <textarea id="q" rows="1" placeholder="예: 우리카드랑 비교하면 어때?"></textarea>
+    <button id="send">보내기</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---------- calculator ----------
+  var BASE = {visit:35900, self:32900};
+  var DISC_PROMO = {0:0, 40:20000, 80:23000, 160:26000};
+  var DISC_BASIC = {0:0, 40:13000, 80:18000, 160:26000};
+  var st = {care:'visit', spend:'40'};
+  function won(n){ return n.toLocaleString('ko-KR') + '원'; }
+  function seg(id, key){
+    var el = document.getElementById(id);
+    el.addEventListener('click', function(e){
+      var b = e.target.closest('button'); if(!b) return;
+      el.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+      b.classList.add('on'); st[key] = b.dataset.v; calc();
+    });
+  }
+  function calc(){
+    var base = BASE[st.care];
+    var promo = document.getElementById('chkPromo').checked;
+    var fee = document.getElementById('chkFee').checked ? 120000 : 0;
+    var d = (promo ? DISC_PROMO : DISC_BASIC)[st.spend];
+    var m = base - d;
+    document.getElementById('rMonthly').textContent = won(m);
+    document.getElementById('rBase').textContent = won(base);
+    document.getElementById('rDisc').textContent = d ? '-' + won(d) : '0원';
+    var total = m*72 + fee;
+    document.getElementById('rTotal').textContent = won(total);
+    document.getElementById('rSave').textContent = won(base*72 - total);
+  }
+  seg('segCare','care'); seg('segSpend','spend');
+  document.getElementById('chkPromo').addEventListener('change', calc);
+  document.getElementById('chkFee').addEventListener('change', calc);
+  calc();
+
+  // ---------- API key (never stored in the page source) ----------
+  var KEY_NAME = 'lgwp_gemini_key';
+  function getKey(){ try { return localStorage.getItem(KEY_NAME) || ''; } catch(e){ return ''; } }
+  function setKey(k){ try { if(k) localStorage.setItem(KEY_NAME, k); else localStorage.removeItem(KEY_NAME); } catch(e){} }
+  // one-time setup link: ...#k=AIza...  -> saved locally, then removed from the address bar
+  (function(){
+    var m = location.hash.match(/[#&]k=([^&]+)/);
+    if(m){ setKey(decodeURIComponent(m[1])); history.replaceState(null, '', location.pathname + location.search); }
+  })();
+
+  // ---------- chat ----------
+  var KNOWLEDGE = [
+    '[제품] LG 퓨리케어 2025 오브제컬렉션 맞춤출수 정수기(냉온정), 모델 WD523V. 색상: 카밍 에센스 화이트(H)/베이지(C)/핑크(P)/크림 스카이(M). 중공사막(UF) 필터 2개, 고온살균+UV살균, 데스크형 직수형, 편의기능 16개, 컵 높이에 맞춰 출수 높이 조절. 아정당 구매후기 37건.',
+    '[아정당 월 렌탈료, 카드할인 전, 2026-11-22 조회] 6년: 방문관리 35,900원 / 자가관리 32,900원. 5년: 방문 38,900 / 자가 35,900. 4년: 방문 43,900 / 자가 40,900. 방문관리=6개월마다 방문관리(6M반값_6개월관리), 자가관리=6개월마다 필터 택배(6M반값_6개월필터발송).',
+    '[롯데카드 LG구독엔로카, 2026.11.01~11.30 기준] 연회비 20,000원(국내/AMEX/Mastercard). 문의 1577-9469. LG전자 구독료를 이 카드로 자동이체해야 결제일 할인. 전월(1일~말일) 사용액별 월 할인: 40만 미만 0원 / 40만 이상 카드기본 13,000 + LG프로모션 7,000 = 20,000원 / 80만 이상 18,000 + 5,000 = 23,000원 / 160만 이상 26,000 + 프로모션 없음 = 26,000원.',
+    '[프로모션 조건] LG 프로모션은 AMEX 브랜드 발급 시에만 제공. LG전자 구독 자동이체 필수. 월 1회, 최대 72개월. LG전자 공지상 LG구독엔로카 신규 발급 고객 한정.',
+    '[롯데카드 유의사항] 신규 발급 시 발급일부터 다음 달 말일까지는 전월 사용액 40만 미만이어도 13,000원 할인 한도 제공. LG구독료(할인받은 구독료 전액)는 전월 실적에서 제외. 실적 제외: 롯데카드 중 다른 카드 사용액, 무이자할부, 거래취소, 국세·지방세, 건강보험·국민연금·고용보험·산재보험, 초중고 납입금, 대학 등록금, 정부지원금, LH·SH 임대료, 월세, 부동산 임대료, 도시가스·전기·수도요금, 공과금, 아파트관리비, TV수신료, 기프트·선불카드 충전, 포인트 충전, 상품권, 택시, 고속버스, 고속도로 통행료, 대중교통, 무승인전표, 관세·벌금·과태료·민원수수료, 인지세·송달료, 현금서비스, 카드론, 연회비, 이자·수수료. 할인 한도보다 요금이 적으면 요금만큼만 할인, 남은 한도 이월 안 됨. 롯데카드 다른 결제일 할인과 중복 시 큰 것 하나. 자동이체 등록된 요금이 롯데카드에 청구되는 시점부터 할인. 자동이체 등록: LG전자 고객센터 1544-7777 / LG전자 멤버십 앱(구독>납부방법 변경) / 홈페이지(마이페이지>구독>계약현황>납부 정보변경). 부가서비스는 카드 출시 후 3년 이상 유지, 그 뒤 변경 가능.',
+    '[6년 72개월 합계, AMEX 프로모션 가정, 연회비 제외] 방문관리: 할인없음 35,900/월 2,584,800원; 40만+ 15,900/월 1,144,800원; 80만+ 12,900/월 928,800원; 160만+ 9,900/월 712,800원. 자가관리: 할인없음 32,900/월 2,368,800원; 40만+ 12,900/월 928,800원; 80만+ 9,900/월 712,800원; 160만+ 6,900/월 496,800원. 프로모션 없이(Mastercard) 할인액은 40만+ 13,000 / 80만+ 18,000 / 160만+ 26,000원. 연회비 6년 약 12만 원 별도.',
+    '[아정당 다른 제휴카드 월 최대 할인 / 연회비] LG전자 Platinum 우리카드 42,000 / 25,000(전월 100만 이상부터 할인 시작) · LG구독엔로카 롯데 26,000 / 20,000 · LG전자 우리카드 22,000 / 15,000(전월 30만 이상 16,000원부터) · 아정당 하나카드 PLCC 20,000 / 29,000 · LG전자 KB국민 20,000 / 15,000(30만 이상 15,000원부터) · The 구독케어 신한 20,000 / 22,000~25,000 · LG전자 플러스 하나 20,000 / 23,000(30만 이상 13,000원부터) · NH올원 LG전자 BEST 20,000 / 15,000~17,000(30만 이상 10,000원부터) · 전북·광주은행 베스트케어 20,000 / 14,000~15,000(30만 이상 8,000원부터) · LG전자 현대카드 16,000 / 20,000(40만 이상 8,000원부터). 아정당 우리카드 PLCC 프로모션 문구: 연 최대 31만 2천 원 할인(월 2.5만+1천, 12개월).',
+    '[아직 모르는 것] 아정당 현금 사은품 금액(상담 시 안내), 기존 롯데카드 보유자의 프로모션 가능 여부, 6년 후 소유권 이전, 중도해지 위약금, 설치비·등록비, 상가 설치·사업자 명의 가입 가능 여부, 11월 프로모션 적용 기준월. 이런 질문에는 추측하지 말고 상담원·LG전자(1544-7777)·롯데카드(1577-9469)에 확인하라고 안내.'
+  ].join('\n');
+
+  var SYSTEM = '너는 LG 정수기 WD523V 렌탈 가입을 고민하는 소비자를 돕는 상담 도우미야. 아래 [자료]에 있는 사실만 근거로 한국어로 짧고 쉽게 답해. ' +
+    '계산이 필요하면 숫자를 보여주며 계산해. 자료에 없는 내용(위약금, 사은품 금액, 소유권 이전 등)은 지어내지 말고 "자료에 없어서 확인이 필요해요"라고 말하고 어디에 물어볼지 알려줘. ' +
+    '일반 상식으로 답할 때는 일반적인 이야기라고 밝혀. 답은 모바일 화면용으로 5~8줄 이내, 필요하면 "- " 목록을 써.\n\n[자료]\n' + KNOWLEDGE;
+
+  var MODELS = ['gemini-3.8-flash','gemini-3.5-flash','gemini-3-flash-preview','gemini-flash-latest'];
+  var history = [];
+  var chat = document.getElementById('chat'), msgs = document.getElementById('msgs');
+  var q = document.getElementById('q'), sendBtn = document.getElementById('send');
+  var keyBox = document.getElementById('keyBox');
+
+  function esc(s){ return s.replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function md(s){
+    var lines = esc(s).split('\n'), out = [], inList = false;
+    lines.forEach(function(l){
+      l = l.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+      var m = l.match(/^\s*[-*•]\s+(.*)/);
+      if(m){ if(!inList){ out.push('<ul>'); inList = true; } out.push('<li>'+m[1]+'</li>'); }
+      else { if(inList){ out.push('</ul>'); inList = false; } out.push(l.replace(/^#+\s*/,'') + '<br>'); }
+    });
+    if(inList) out.push('</ul>');
+    return out.join('').replace(/(<br>)+$/,'');
+  }
+  function add(role, text){
+    var d = document.createElement('div'); d.className = 'msg ' + role;
+    if(role === 'bot') d.innerHTML = md(text); else d.textContent = text;
+    msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; return d;
+  }
+  function showKeyBox(show){ keyBox.classList.toggle('show', show); if(show) document.getElementById('keyInput').value = ''; }
+
+  document.getElementById('chatFab').onclick = function(){
+    chat.classList.add('open');
+    if(!msgs.children.length){
+      add('bot', '안녕하세요! 이 페이지 내용을 바탕으로 정수기 렌탈과 롯데카드 할인에 대해 답해 드려요. 예를 들어 **"한 달에 50만 원 쓰면 6년 동안 얼마 내?"** 처럼 물어보세요.');
+      add('sys', 'AI 답변은 틀릴 수 있어요. 가입 전에 상담원에게 최종 조건을 확인하세요.');
+    }
+    if(!getKey()) showKeyBox(true);
+  };
+  document.getElementById('btnClose').onclick = function(){ chat.classList.remove('open'); };
+  document.getElementById('btnKey').onclick = function(){ showKeyBox(!keyBox.classList.contains('show')); };
+  document.getElementById('keySave').onclick = function(){
+    var k = document.getElementById('keyInput').value.trim();
+    if(k){ setKey(k); showKeyBox(false); add('sys','키를 저장했어요.'); }
+  };
+  document.getElementById('keyClear').onclick = function(){ setKey(''); add('sys','이 기기에서 키를 지웠어요.'); };
+  document.getElementById('chips').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(b){ q.value = b.textContent; send(); }
+  });
+  q.addEventListener('input', function(){ q.style.height = 'auto'; q.style.height = Math.min(q.scrollHeight,120) + 'px'; });
+  sendBtn.onclick = send;
+
+  function callModel(model, key, body){
+    var ctrl = new AbortController(); var t = setTimeout(function(){ ctrl.abort(); }, 40000);
+    return fetch('https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent', {
+      method:'POST', signal: ctrl.signal,
+      headers:{'Content-Type':'application/json','x-goog-api-key':key},
+      body: JSON.stringify(body)
+    }).then(function(r){
+      return r.json().then(function(j){ clearTimeout(t); return {ok:r.ok, status:r.status, j:j}; });
+    }, function(err){ clearTimeout(t); return {ok:false, status:0, j:{error:{message: err.name === 'AbortError' ? '응답 시간 초과' : String(err)}}}; });
+  }
+
+  function send(){
+    var text = q.value.trim(); if(!text) return;
+    var key = getKey();
+    if(!key){ showKeyBox(true); add('sys','먼저 Gemini API 키를 저장해 주세요.'); return; }
+    q.value = ''; q.style.height = 'auto';
+    add('user', text);
+    history.push({role:'user', parts:[{text:text}]});
+    var wait = add('bot', '생각하는 중…');
+    sendBtn.disabled = true;
+    var body = { systemInstruction:{parts:[{text:SYSTEM}]}, contents: history.slice(-12), generationConfig:{temperature:0.3, maxOutputTokens:1200} };
+    var i = 0, lastErr = '';
+    (function next(){
+      if(i >= MODELS.length){
+        wait.innerHTML = md('답을 받지 못했어요. 잠시 후 다시 시도해 주세요.\n(' + lastErr + ')');
+        history.pop(); sendBtn.disabled = false; return;
+      }
+      var model = MODELS[i++];
+      callModel(model, key, body).then(function(res){
+        if(res.ok){
+          var c = res.j.candidates && res.j.candidates[0];
+          var ans = c && c.content && c.content.parts ? c.content.parts.map(function(p){return p.text||'';}).join('') : '';
+          if(!ans){ lastErr = '빈 응답'; return next(); }
+          wait.innerHTML = md(ans);
+          history.push({role:'model', parts:[{text:ans}]});
+          msgs.scrollTop = msgs.scrollHeight; sendBtn.disabled = false;
+        } else {
+          lastErr = (res.j.error && res.j.error.message) || ('HTTP ' + res.status);
+          if(res.status === 400 && /API key/i.test(lastErr)){ wait.innerHTML = md('API 키가 올바르지 않아요. 위의 **키 설정**에서 다시 넣어 주세요.'); history.pop(); sendBtn.disabled = false; return; }
+          next();
+        }
+      });
+    })();
+  }
+  q.addEventListener('keydown', function(e){ if(e.key === 'Enter' && !e.shiftKey && !e.isComposing){ e.preventDefault(); send(); } });
+})();
+</script>
+</body>
+</html>
