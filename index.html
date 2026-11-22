@@ -387,7 +387,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   // one-time setup link: ...#k=AIza...  -> saved locally, then removed from the address bar
   (function(){
     var m = location.hash.match(/[#&]k=([^&]+)/);
-    if(m){ setKey(decodeURIComponent(m[1])); history.replaceState(null, '', location.pathname + location.search); }
+    if(m){ setKey(decodeURIComponent(m[1])); window.history.replaceState(null, '', location.pathname + location.search); }
   })();
 
   // ---------- chat ----------
@@ -407,7 +407,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
     '일반 상식으로 답할 때는 일반적인 이야기라고 밝혀. 답은 모바일 화면용으로 5~8줄 이내, 필요하면 "- " 목록을 써.\n\n[자료]\n' + KNOWLEDGE;
 
   var MODELS = ['gemini-3.8-flash','gemini-3.5-flash','gemini-3-flash-preview','gemini-flash-latest'];
-  var history = [];
+  var chatHistory = [];
   var chat = document.getElementById('chat'), msgs = document.getElementById('msgs');
   var q = document.getElementById('q'), sendBtn = document.getElementById('send');
   var keyBox = document.getElementById('keyBox');
@@ -469,15 +469,15 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
     if(!key){ showKeyBox(true); add('sys','먼저 Gemini API 키를 저장해 주세요.'); return; }
     q.value = ''; q.style.height = 'auto';
     add('user', text);
-    history.push({role:'user', parts:[{text:text}]});
+    chatHistory.push({role:'user', parts:[{text:text}]});
     var wait = add('bot', '생각하는 중…');
     sendBtn.disabled = true;
-    var body = { systemInstruction:{parts:[{text:SYSTEM}]}, contents: history.slice(-12), generationConfig:{temperature:0.3, maxOutputTokens:1200} };
+    var body = { systemInstruction:{parts:[{text:SYSTEM}]}, contents: chatHistory.slice(-12), generationConfig:{temperature:0.3, maxOutputTokens:1200} };
     var i = 0, lastErr = '';
     (function next(){
       if(i >= MODELS.length){
         wait.innerHTML = md('답을 받지 못했어요. 잠시 후 다시 시도해 주세요.\n(' + lastErr + ')');
-        history.pop(); sendBtn.disabled = false; return;
+        chatHistory.pop(); sendBtn.disabled = false; return;
       }
       var model = MODELS[i++];
       callModel(model, key, body).then(function(res){
@@ -486,11 +486,11 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
           var ans = c && c.content && c.content.parts ? c.content.parts.map(function(p){return p.text||'';}).join('') : '';
           if(!ans){ lastErr = '빈 응답'; return next(); }
           wait.innerHTML = md(ans);
-          history.push({role:'model', parts:[{text:ans}]});
+          chatHistory.push({role:'model', parts:[{text:ans}]});
           msgs.scrollTop = msgs.scrollHeight; sendBtn.disabled = false;
         } else {
           lastErr = (res.j.error && res.j.error.message) || ('HTTP ' + res.status);
-          if(res.status === 400 && /API key/i.test(lastErr)){ wait.innerHTML = md('API 키가 올바르지 않아요. 위의 **키 설정**에서 다시 넣어 주세요.'); history.pop(); sendBtn.disabled = false; return; }
+          if(res.status === 400 && /API key/i.test(lastErr)){ wait.innerHTML = md('API 키가 올바르지 않아요. 위의 **키 설정**에서 다시 넣어 주세요.'); chatHistory.pop(); sendBtn.disabled = false; return; }
           next();
         }
       });
