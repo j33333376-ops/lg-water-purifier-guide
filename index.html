@@ -453,7 +453,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   sendBtn.onclick = send;
 
   function callModel(model, key, body){
-    var ctrl = new AbortController(); var t = setTimeout(function(){ ctrl.abort(); }, 40000);
+    var ctrl = new AbortController(); var t = setTimeout(function(){ ctrl.abort(); }, 25000);
     return fetch('https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent', {
       method:'POST', signal: ctrl.signal,
       headers:{'Content-Type':'application/json','x-goog-api-key':key},
