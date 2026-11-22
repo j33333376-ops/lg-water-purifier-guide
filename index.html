@@ -28,13 +28,23 @@ header{background:var(--card);border-bottom:1px solid var(--line);padding:20px 1
 header .tag{display:inline-block;font-size:12px;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:2px 8px;border-radius:99px}
 h1{font-size:22px;line-height:1.35;margin:8px 0 4px}
 header p{margin:0;color:var(--sub);font-size:14px}
-nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);
-  display:flex;gap:6px;overflow-x:auto;padding:8px 12px;scrollbar-width:none}
+.topbar{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+.modelbar{display:flex;gap:8px;padding:8px 12px 4px;max-width:720px;margin:0 auto}
+.modelbar button{flex:1;display:flex;align-items:center;gap:8px;border:2px solid var(--line);background:var(--card);color:var(--text);
+  font:inherit;text-align:left;padding:6px 8px;border-radius:12px;cursor:pointer}
+.modelbar button img{width:40px;height:40px;object-fit:contain;background:#f0f1f3;border-radius:8px;flex:0 0 auto}
+.modelbar button b{display:block;font-size:14px;line-height:1.2}
+.modelbar button span{font-size:11.5px;color:var(--sub);line-height:1.3}
+.modelbar button.on{border-color:var(--accent);background:var(--accent-soft)}
+.modelbar button.on b{color:var(--accent)}
+body.m-WD523V [data-model="WD520VCT"], body.m-WD520VCT [data-model="WD523V"]{display:none!important}
+nav{background:var(--card);
+  display:flex;gap:6px;overflow-x:auto;padding:6px 12px 8px;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
 nav a{flex:0 0 auto;font-size:14px;color:var(--sub);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--line);white-space:nowrap}
 nav a:active{background:var(--blue-soft)}
 main{max-width:720px;margin:0 auto;padding:12px 16px}
-section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:12px 0;scroll-margin-top:60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:12px 0;scroll-margin-top:120px}
 h2{font-size:18px;margin:0 0 12px}
 h3{font-size:16px;margin:18px 0 8px}
 p{margin:8px 0}
@@ -115,6 +125,17 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   <p>소비자 입장에서 실제로 얼마를 내는지, 무엇을 조심해야 하는지 한 장에 모았어요.</p>
 </header>
 
+<div class="topbar">
+<div class="modelbar" id="modelBar">
+  <button data-m="WD520VCT">
+    <img src="https://image.ajd.kr/PRODUCT_CODE/8cd1cfc5-2ec4-4607-b54c-ad3d8cbba199" alt="">
+    <span><b>WD520VCT</b>맞춤출수 lite · 자가 28,900</span>
+  </button>
+  <button data-m="WD523V">
+    <img src="https://image.ajd.kr/PRODUCT_CODE/229ff54f-4322-4afe-9868-bf9ef421987c" alt="">
+    <span><b>WD523V</b>맞춤출수 · 자가 32,900</span>
+  </button>
+</div>
 <nav>
   <a href="models.html" style="color:#fff;background:var(--accent);border-color:var(--accent);font-weight:700">LG 모델 비교 →</a>
   <a href="#summary">요약</a>
@@ -129,6 +150,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   <a href="#check">체크리스트</a>
   <a href="#product">제품</a>
 </nav>
+</div>
 
 <main>
 
@@ -276,7 +298,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   <label class="chk" id="promoWrap"><input type="checkbox" id="chkPromo" checked><span id="promoLabel">카드 프로모션 받기</span></label>
   <label class="chk"><input type="checkbox" id="chkFee" checked><span id="feeLabel">6년치 연회비도 합쳐서 보기</span></label>
   <div class="result">
-    <div class="muted">매달 실제로 내는 돈</div>
+    <div class="muted">매달 실제로 내는 돈 · <b data-model="WD520VCT">WD520VCT</b><b data-model="WD523V">WD523V</b></div>
     <div class="monthly" id="rMonthly">-</div>
     <div class="row"><span>정가 렌탈료</span><span id="rBase">-</span></div>
     <div class="row"><span>카드 할인</span><span id="rDisc">-</span></div>
@@ -414,7 +436,37 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
 </section>
 
 <section id="product">
-  <h2>제품 정보 (WD523V)</h2>
+  <h2>제품 정보 <span data-model="WD523V">(WD523V)</span><span data-model="WD520VCT">(WD520VCT)</span></h2>
+  <p class="muted" style="margin-top:-6px">맨 위에서 고른 모델의 정보가 나와요.</p>
+  <div data-model="WD520VCT">
+  <div class="pgal">
+    <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/8cd1cfc5-2ec4-4607-b54c-ad3d8cbba199" alt="WD520VCT 사진 1">
+    <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/4566acae-3c85-4da0-8a35-3d2c39ce1adc" alt="WD520VCT 사진 2">
+    <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/691db2cf-0442-4b2f-9af9-cd89cd11a057" alt="WD520VCT 사진 3">
+    <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/49baec7b-2c00-4338-bfa1-2e42bd132f4e" alt="WD520VCT 사진 4">
+    <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/79d78fa3-9fee-4c55-8958-d1dbca542058" alt="WD520VCT 사진 5">
+  </div>
+  <p class="muted" style="margin-top:0">사진은 옆으로 넘겨 보세요 (출처: 아정당 상품 페이지)</p>
+  <table class="tbl">
+    <tbody>
+      <tr><td>제품명</td><td>LG 퓨리케어 2025 오브제컬렉션 맞춤 lite 냉온정수기 (냉온정)</td></tr>
+      <tr><td>모델</td><td>WD520VCT (2026년 5월 출시)</td></tr>
+      <tr><td>색상</td><td>카밍 베이지</td></tr>
+      <tr><td>크기</td><td>폭 168 × 높이 398 × 깊이 400 mm (LG 공식)</td></tr>
+      <tr><td>무게</td><td>10.2kg</td></tr>
+      <tr><td>기능</td><td>냉수(순간냉각) · 온수(면상 히터 순간가열) · 정수</td></tr>
+      <tr><td>필터</td><td>중금속9 흡착 필터 + 바이러스 클리어 필터</td></tr>
+      <tr><td>살균</td><td>직수관 자동 고온살균(주 1회), 출수구 고온살균(수동), UVnano 출수구 살균</td></tr>
+      <tr><td>출수량</td><td>120 · 250 · 500 · 1,000mL 4단계 (ThinQ 앱에서 설정)</td></tr>
+      <tr><td>온도</td><td>40~90℃, 10℃ 단위</td></tr>
+      <tr><td>없는 기능</td><td>위아래로 움직이는 출수구, 음성 안내</td></tr>
+      <tr><td>그 밖에</td><td>인버터 컴프레서, ThinQ(Wi-Fi), 가로·세로 설치 가능</td></tr>
+      <tr><td>6년 요금</td><td>방문 31,900원 / 자가 28,900원 (아정당·LG 홈페이지 같음)</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">아정당 구매후기 22건</p>
+  </div>
+  <div data-model="WD523V">
   <div class="pgal">
     <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/229ff54f-4322-4afe-9868-bf9ef421987c" alt="WD523V 색상별 사진">
     <img loading="lazy" src="https://image.ajd.kr/PRODUCT_CODE/4c1103b8-70a4-4d1e-9cfb-d133481ce2da" alt="WD523V 사진 2">
@@ -438,7 +490,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
       <tr><td>부가</td><td>디스플레이, 온도 표시, 물받이, 음성안내, 자가진단, 필터교환 알림</td></tr>
     </tbody>
   </table>
-  <p class="muted">아정당 구매후기 37건 · 컵 높이에 맞춰 출수 높이를 조절하는 맞춤출수 기능</p>
+  <p class="muted">아정당 구매후기 37건 · 컵 높이에 맞춰 출수 높이를 조절하는 맞춤출수 기능 · 6년 방문 35,900원 / 자가 32,900원</p>
+  </div>
   <p><a class="modelsLink" href="models.html?pick=WD523V,WD520VCT,WD524VT" style="display:block;text-align:center;font-weight:700;color:var(--blue)">비슷한 LG 냉온정 모델과 나란히 비교하기 →</a></p>
 </section>
 
@@ -611,10 +664,30 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
     document.getElementById('rTotal').textContent = won(total);
     document.getElementById('rSave').textContent = won(Math.max(0, base*72 - total));
   }
-  seg('segModel','model'); seg('segCare','care'); seg('segCard','card'); seg('segTier','tier');
+  seg('segCare','care'); seg('segCard','card'); seg('segTier','tier');
   document.getElementById('chkPromo').addEventListener('change', calc);
   document.getElementById('chkFee').addEventListener('change', calc);
-  drawTiers(); calc();
+
+  // ---------- page-wide model switch (top bar + calculator stay in sync) ----------
+  function setModel(m){
+    if(!BASE[m]) m = 'WD520VCT';
+    st.model = m;
+    document.body.classList.remove('m-WD523V','m-WD520VCT');
+    document.body.classList.add('m-' + m);
+    document.querySelectorAll('#modelBar button, #segModel button').forEach(function(b){
+      b.classList.toggle('on', (b.dataset.m || b.dataset.v) === m);
+    });
+    try { localStorage.setItem('lgwp_model', m); } catch(e){}
+    calc();
+  }
+  document.getElementById('modelBar').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(b) setModel(b.dataset.m);
+  });
+  document.getElementById('segModel').addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(b) setModel(b.dataset.v);
+  });
+  var saved = null; try { saved = localStorage.getItem('lgwp_model'); } catch(e){}
+  drawTiers(); setModel(saved || 'WD520VCT');
 
   // ---------- API key (never stored in the page source) ----------
   var KEY_NAME = 'lgwp_gemini_key';
