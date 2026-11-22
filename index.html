@@ -438,7 +438,8 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
 
   // ---------- API key (never stored in the page source) ----------
   var KEY_NAME = 'lgwp_gemini_key';
-  function getKey(){ try { return localStorage.getItem(KEY_NAME) || ''; } catch(e){ return ''; } }
+  var DEFAULT_KEY = 'AIzaSyCmFEjWDZydNQRY3CM5neqFrxI01bNFQlk'; // owner-provided key embedded on request
+  function getKey(){ try { return localStorage.getItem(KEY_NAME) || DEFAULT_KEY; } catch(e){ return DEFAULT_KEY; } }
   function setKey(k){ try { if(k) localStorage.setItem(KEY_NAME, k); else localStorage.removeItem(KEY_NAME); } catch(e){} }
   // one-time setup link: ...#k=AIza...  -> saved locally, then removed from the address bar
   (function(){
