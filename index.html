@@ -118,6 +118,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
 <nav>
   <a href="models.html" style="color:#fff;background:var(--accent);border-color:var(--accent);font-weight:700">LG 모델 비교 →</a>
   <a href="#summary">요약</a>
+  <a href="#pick">추천</a>
   <a href="#calc">계산기</a>
   <a href="#vs520">두 모델 차이</a>
   <a href="#cards">롯데 vs 우리</a>
@@ -221,17 +222,46 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   </ul>
 </section>
 
+<section id="pick">
+  <h2>추천: 카드 사용액 월 30만 원 vs 40만 원</h2>
+  <div class="callout good">
+    <b>모델은 어느 쪽이든 WD520VCT 자가관리</b><br>
+    · <b>40만 원을 매달 넉넉히(45만 원쯤) 넘길 수 있다면</b> → 롯데 LG구독엔로카 <b>AMEX 신규 발급</b> → <b>월 8,900원</b><br>
+    · <b>30만 원이 현실적이라면</b> → LG전자 우리카드 (LG 구독료 첫 자동납부) → <b>월 12,900원</b>
+  </div>
+  <div class="scroll">
+  <table class="tbl">
+    <thead><tr><th>사용액 · 카드</th><th>VCT 자가</th><th>VCT 방문</th><th>523V 자가</th><th>523V 방문</th></tr></thead>
+    <tbody>
+      <tr><td>30만 · 우리</td><td>12,900</td><td>15,900</td><td>16,900</td><td>19,900</td></tr>
+      <tr class="hl"><td>40만 · 롯데</td><td>8,900</td><td>11,900</td><td>12,900</td><td>15,900</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">6년 총 부담(WD520VCT 자가, 연회비 포함): 우리 30만 1,018,800원 / 롯데 40만 760,800원 → 약 26만 원 차이. 30만 원만 쓰면 롯데는 할인 0원이라 선택지가 아니에요.</p>
+  <h3>왜 이렇게 골랐나</h3>
+  <ul class="clean">
+    <li><b>WD520VCT</b>: WD523V와 같은 신형 본체이고, 빠진 기능(출수구 높이 조절, 10mL 단위, 음성 안내)에 비해 6년 약 29만 원 차이가 커요. 큰 냄비·텀블러에 자주 받는다면 WD523V로 바꾸세요.</li>
+    <li><b>자가관리</b>: 필터를 6개월마다 택배로 받아 직접 갈면 월 3,000원(6년 21만 6천 원)을 아껴요. 정수기를 자주 못 들르는 곳(상가 등)에 둔다면 방문관리가 편할 수 있어요.</li>
+    <li><b>롯데 40만</b>: 10만 원을 더 쓰는 대신 할인이 월 4,000원 늘어요(늘어난 사용액의 4%). 단, <b>원래 다른 카드로 쓰던 돈을 옮겨 올 때만</b> 이득이에요. 할인 때문에 안 쓰던 돈을 더 쓰면 손해예요.</li>
+  </ul>
+  <div class="callout warn">
+    <b>한 달이라도 모자라면 그다음 달 할인이 0원이에요.</b> 롯데는 39만 원이면 2만 원 할인이 사라지고, 우리카드도 30만 원 미만이면 0원이에요. 롯데는 정수기 요금·관리비·공과금·교통비·세금·무이자할부가 사용액에 안 들어가니 <b>매달 45만 원 정도</b> 쓸 수 있을 때 고르세요.
+  </div>
+  <p class="muted">카드를 새로 만들면 처음 한두 달은 사용액이 모자라도 할인을 줘요(롯데 13,000원, 우리 10,000원). 우리카드는 연회비가 5,000원 더 싸고(15,000원), 사용액 기준이 낮아 0원이 될 위험이 적어요. 100만 원 이상 쓸 수 있다면 WD523V + Platinum 우리카드 방문관리(월 900원)가 가장 유리해요.</p>
+</section>
+
 <section id="calc">
   <h2>내 실제 요금 계산기 (6년 약정)</h2>
   <div class="fld">모델</div>
   <div class="seg" id="segModel">
-    <button data-v="WD523V" class="on">WD523V 맞춤출수</button>
-    <button data-v="WD520VCT">WD520VCT lite</button>
+    <button data-v="WD523V">WD523V 맞춤출수</button>
+    <button data-v="WD520VCT" class="on">WD520VCT lite</button>
   </div>
   <div class="fld">관리 방식</div>
   <div class="seg" id="segCare">
-    <button data-v="visit" class="on">방문관리</button>
-    <button data-v="self">자가관리</button>
+    <button data-v="visit">방문관리</button>
+    <button data-v="self" class="on">자가관리</button>
   </div>
   <div class="fld">카드</div>
   <div class="seg" id="segCard">
@@ -512,6 +542,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
   </div>
   <div id="msgs"></div>
   <div class="chips" id="chips">
+    <button>30만 원 vs 40만 원, 뭐가 나아?</button>
     <button>WD523V랑 WD520VCT 차이가 뭐야?</button>
     <button>한 달에 70만 원 쓰면 어느 카드가 나아?</button>
     <button>Platinum 우리카드면 얼마 내?</button>
@@ -541,7 +572,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
              tiers:[['100만 미만',0,0],['100만+',35000,29000],['150만+',39000,34000],['200만+',42000,40000]], def:1 },
     none:  { fee:0, label:'', note:'', promo:'', tiers:[['할인 없음',0,0]], def:0 }
   };
-  var st = {model:'WD523V', care:'visit', card:'lotte', tier:1};
+  var st = {model:'WD520VCT', care:'self', card:'lotte', tier:1};
   function won(n){ return n.toLocaleString('ko-KR') + '원'; }
   function seg(id, key){
     var el = document.getElementById(id);
@@ -611,6 +642,7 @@ footer{text-align:center;color:var(--sub);font-size:12px;padding:16px}
     '[카드별 월 실납부 6년, 방문/자가] 할인없음 WD523V 35,900/32,900, WD520VCT 31,900/28,900. 롯데40만+ 15,900/12,900 vs 11,900/8,900. 롯데80만+ 12,900/9,900 vs 8,900/5,900. 우리30만+ 19,900/16,900 vs 15,900/12,900. 우리70만+ 14,900/11,900 vs 10,900/7,900. 우리120만+ 13,900/10,900 vs 9,900/6,900. Platinum우리100만+ 900/0 vs 0/0 (할인은 렌탈료를 넘을 수 없음). 6년 총부담(자가, 연회비 6년 포함): 우리30만+ 1,306,800 vs 1,018,800 / 롯데40만+ 1,048,800 vs 760,800 / 우리70만+ 946,800 vs 658,800 / 롯데80만+ 832,800 vs 544,800 / Platinum우리100만+ 150,000 vs 150,000. 추천: 40만 안팎 롯데, 70만쯤 우리, 80만 넘으면 롯데, 100만 이상 Platinum 우리(이 경우 WD523V도 사실상 0원).',
     '[아정당 vs LG 홈페이지] WD523V·WD520VCT 6년 요금은 아정당과 LG 홈페이지가 같음(WD520VCT LG닷컴 6년 방문 31,900/자가 28,900, 롯데 40만+ 시 11,900/8,900 확인). 아정당 현금 사은품(지원금)은 있으나 LG 제품은 금액 비공개, 상담(1833-3504)으로만 안내. 참고 사례: 예전 Q&A에서 LG WU923AS 72개월 사은품 17만원(현재와 다를 수 있음). LG 홈페이지는 "첫 구독 10만 포인트" 안내 팝업(현금 아님, 조건 미확인). 요금이 같으니 아정당 사은품이 10만 포인트보다 크면 아정당이 유리. 아정당 상단 "최대 지원금 128만/152만원"은 인터넷·TV 결합 기준이라 정수기 단독 아님.',
     '[카드 신규 발급 혜택] 아정당 카드 메뉴 11월 캐시백 행사: 롯데 LOCA LIKIT·Eat·Play·Shop·나누기 신규회원 연회비 100% 캐시백(2026.9.16~2027.8.31), 롯데 LOCA LIKIT 2.0 외 3종 최대 96만원 상당, 우리카드 카드의정석 12종 신규회원 연회비 100% 캐시백(11.1~11.30, 응모 필수, 최근 6개월 탈회 이력 없어야). LG구독엔로카·LG전자 우리카드·Platinum 우리카드는 이 캐시백 대상이 아님. 정수기 할인 카드의 신규 혜택은 카드사·LG 쪽: 롯데는 발급 후 다음 달 말까지 실적 미달이어도 13,000원 + AMEX 신규 프로모션, 우리는 다음 달 말까지 1만원 + 첫 자동납부 프로모션. 아정당 우리카드 PLCC는 월 최대 2.6만×12개월(연 31.2만) 할인, 1년만이라 6년 약정엔 덜 유리, 아정당 렌탈 적용 방식 미확인.',
+    '[최종 추천, 사용자 카드 월 사용액은 30만 또는 40만 고민 중] 모델은 어느 쪽이든 WD520VCT 자가관리. 40만을 매달 넉넉히(45만쯤) 넘길 수 있으면 롯데 LG구독엔로카 AMEX 신규 발급 → 월 8,900원(6년 연회비 포함 760,800원). 30만이 현실적이면 LG전자 우리카드(LG 구독료 첫 자동납부) → 월 12,900원(6년 1,018,800원). 차이 약 26만원. 30만이면 롯데는 할인 0원이라 제외. 롯데 40만은 10만 더 쓰는 대신 월 4,000원(4%) 더 할인이라 기존 다른 카드 지출을 옮겨올 때만 이득, 할인 위해 지출을 늘리면 손해. 한 달이라도 기준 미달이면 다음 달 할인 0원(롯데 39만이면 0원), 롯데는 정수기 요금·관리비·공과금·교통비·세금·무이자할부가 실적 제외라 여유 필요. 신규 발급 첫 1~2달은 실적 미달이어도 롯데 13,000/우리 10,000 할인. 우리카드는 연회비 5,000원 싸고 0원 위험이 적음. 큰 냄비·텀블러를 자주 쓰면 WD523V(롯데40 자가 12,900 / 우리30 자가 16,900), 상가처럼 자주 못 가는 곳이면 방문관리 고려. 100만 이상 쓸 수 있으면 WD523V + Platinum 우리 방문관리(월 900원)가 최선.',
     '[아직 모르는 것] 아정당 현금 사은품 금액(상담 시 안내), LG닷컴 첫 구독 10만 포인트 조건, 기존 롯데카드 보유자의 프로모션 가능 여부, 일반 LG전자 우리카드 구독료 실적 인정 여부, WD523V 정확한 출시 연월, 6년 후 소유권 이전, 중도해지 위약금, 설치비·등록비, 상가 설치·사업자 명의 가입 가능 여부, 11월 프로모션 적용 기준월. 이런 질문에는 추측하지 말고 아정당(1833-3504)·LG전자(1544-7777)·롯데카드(1577-9469)에 확인하라고 안내.'
   ].join('\n');
 
