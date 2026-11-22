@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LG 정수기 모델 비교</title>
+<meta name="description" content="아정당에 올라온 LG 퓨리케어 정수기 22종의 6년 약정 요금, 롯데카드 할인 후 금액, 사진과 사양 비교">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<style>
+:root{
+  --bg:#f5f6f8; --card:#fff; --text:#1b1d22; --sub:#5d6470; --line:#e3e6ea;
+  --accent:#d6342c; --accent-soft:#fdecea; --blue:#1f5fd6; --blue-soft:#e8f0fe; --img:#f0f1f3;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#121417; --card:#1c1f24; --text:#eceef1; --sub:#a2a9b4; --line:#2e333a;
+    --accent:#ff6b62; --accent-soft:#3a1f1d; --blue:#7aa7ff; --blue-soft:#1d2a40; --img:#f0f1f3; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-size:16px;line-height:1.55;
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",sans-serif;
+  padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:16px}
+header a.back{font-size:14px;color:var(--blue);text-decoration:none}
+h1{font-size:21px;margin:6px 0 2px}
+header p{margin:0;color:var(--sub);font-size:14px}
+.bar{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:8px 12px}
+.row{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:2px 0}
+.row::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--sub);font:inherit;font-size:13px;padding:6px 11px;border-radius:99px;cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700}
+.lbl{font-size:12px;color:var(--sub);font-weight:700;flex:0 0 auto;align-self:center;margin-right:2px}
+main{max-width:760px;margin:0 auto;padding:8px 12px}
+.count{font-size:13px;color:var(--sub);margin:8px 4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:12px 0;overflow:hidden}
+.card.mine{border:2px solid var(--accent)}
+.gal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;background:var(--img);scrollbar-width:none}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:0 0 100%;width:100%;height:240px;object-fit:contain;scroll-snap-align:center;background:var(--img)}
+.galwrap{position:relative}
+.dots{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:11px;color:#555}
+.badge{position:absolute;top:10px;left:10px;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:3px 9px;border-radius:99px}
+.body{padding:14px}
+.model{font-size:12px;color:var(--sub);font-weight:700}
+.name{font-size:16px;font-weight:700;margin:2px 0 8px;line-height:1.4}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.tag{font-size:12px;background:var(--bg);color:var(--sub);padding:2px 8px;border-radius:6px}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pbox{background:var(--bg);border-radius:10px;padding:10px}
+.pbox .k{font-size:12px;color:var(--sub)}
+.pbox .v{font-size:14px;color:var(--sub);text-decoration:line-through}
+.pbox .n{font-size:20px;font-weight:800;color:var(--accent)}
+.pbox .n small{font-size:12px;font-weight:600;color:var(--sub)}
+.pbox.na .n{color:var(--sub);font-size:14px;font-weight:600}
+details{margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+summary{cursor:pointer;font-size:14px;color:var(--blue);font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}
+th{color:var(--sub);font-weight:600;width:34%}
+td.r,th.r{text-align:right}
+.actions{display:flex;gap:8px;margin-top:12px}
+.btn{flex:1;text-align:center;border:1px solid var(--line);background:var(--card);color:var(--text);font:inherit;font-size:14px;padding:9px;border-radius:10px;text-decoration:none;cursor:pointer}
+.btn.sel{background:var(--blue-soft);border-color:var(--blue);color:var(--blue);font-weight:700}
+.note{font-size:13px;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:12px 0}
+#cmpBar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;display:none;
+  background:var(--text);color:var(--bg);border-radius:14px;padding:12px 14px;align-items:center;gap:10px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+#cmpBar.show{display:flex}
+#cmpBar span{flex:1;font-size:14px}
+#cmpBar button{border:0;border-radius:10px;padding:9px 14px;font:inherit;font-weight:700;cursor:pointer}
+#cmpGo{background:var(--blue);color:#fff}
+#cmpClear{background:transparent;color:var(--bg);border:1px solid var(--sub)!important}
+#cmp{position:fixed;inset:0;z-index:30;background:var(--bg);display:none;flex-direction:column}
+#cmp.open{display:flex}
+.cmp-head{display:flex;align-items:center;padding:12px;padding-top:calc(12px + env(safe-area-inset-top));background:var(--card);border-bottom:1px solid var(--line)}
+.cmp-head b{flex:1}
+.cmp-body{flex:1;overflow:auto;padding:8px}
+.cmp-body table{font-size:12.5px;background:var(--card);border-radius:12px;overflow:hidden;min-width:100%}
+.cmp-body th{position:sticky;left:0;background:var(--card);width:82px;min-width:82px;z-index:1}
+.cmp-body td{min-width:120px}
+.cmp-body img{width:100%;max-width:140px;height:110px;object-fit:contain;background:var(--img);border-radius:8px}
+.cmp-body .n{font-weight:800;color:var(--accent);font-size:15px}
+</style>
+</head>
+<body>
+<header>
+  <a class="back" href="./">← 정리 페이지로</a>
+  <h1>LG 정수기 모델 비교</h1>
+  <p id="sub">아정당에 올라온 LG 퓨리케어 정수기, 6년 약정 기준</p>
+</header>
+
+<div class="bar">
+  <div class="row" id="fType">
+    <span class="lbl">기능</span>
+    <button class="chip on" data-v="all">전체</button>
+    <button class="chip" data-v="냉온정">냉온정</button>
+    <button class="chip" data-v="냉정">냉정</button>
+    <button class="chip" data-v="온정">온정</button>
+    <button class="chip" data-v="정수">정수만</button>
+    <button class="chip" data-v="얼음">얼음</button>
+  </div>
+  <div class="row" id="fForm">
+    <span class="lbl">형태</span>
+    <button class="chip on" data-v="all">전체</button>
+    <button class="chip" data-v="데스크형">데스크형</button>
+    <button class="chip" data-v="언더싱크">빌트인(싱크대 아래)</button>
+    <button class="chip" data-v="스탠드형">스탠드형</button>
+  </div>
+  <div class="row" id="fSpend">
+    <span class="lbl">롯데카드</span>
+    <button class="chip" data-v="0">할인 없음</button>
+    <button class="chip on" data-v="40">월 40만+</button>
+    <button class="chip" data-v="80">80만+</button>
+    <button class="chip" data-v="160">160만+</button>
+  </div>
+  <div class="row" id="fSort">
+    <span class="lbl">정렬</span>
+    <button class="chip on" data-v="price">싼 순</button>
+    <button class="chip" data-v="review">후기 많은 순</button>
+    <button class="chip" data-v="size">폭 좁은 순</button>
+  </div>
+</div>
+
+<main>
+  <div class="note">빨간 숫자는 <b>롯데카드 LG구독엔로카(AMEX 신규 발급, 프로모션 포함)</b> 할인을 뺀 6년 약정 월 요금이에요. 할인은 렌탈료보다 클 수 없어서, 요금이 싼 모델은 0원이 될 수 있어요. 사진은 옆으로 넘겨 보세요. <b>비교</b>를 눌러 최대 3개 모델을 나란히 볼 수 있어요.</div>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+  <div class="note">출처: 아정당 상품 페이지 (2026-11-23 조회). 사진과 사양도 아정당 상품 페이지 자료예요. 가격과 프로모션은 바뀔 수 있으니 가입할 때 꼭 다시 확인하세요.</div>
+</main>
+
+<div id="cmpBar"><span id="cmpTxt"></span><button id="cmpClear">비우기</button><button id="cmpGo">비교하기</button></div>
+<div id="cmp"><div class="cmp-head"><b>모델 나란히 비교</b><button class="btn" id="cmpClose" style="flex:0 0 auto">닫기</button></div><div class="cmp-body" id="cmpBody"></div></div>
+
+<script>
+(function(){
+  var IMG = 'https://image.ajd.kr/PRODUCT_CODE/';
+  var MINE = 'WD523V';
+  var DISC = {0:0, 40:20000, 80:23000, 160:26000};
+  var st = {type:'all', form:'all', spend:'40', sort:'price'};
+  var picked = [];
+  var M = [];
+
+  function won(n){ return n.toLocaleString('ko-KR') + '원'; }
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function fee(m, months, type){
+    var c = m.cfg.filter(function(x){ return x.m === months && x.t === type; });
+    if(!c.length) return null;
+    return c.reduce(function(a,b){ return a.f <= b.f ? a : b; });
+  }
+  function net(f){ return Math.max(0, f - DISC[st.spend]); }
+  function funcKey(m){
+    var s = m.specs['정수기능(상세)'] || '';
+    if(/얼음/.test(s)) return '얼음';
+    var c = /냉수/.test(s), h = /온수/.test(s);
+    if(c && h) return '냉온정'; if(c) return '냉정'; if(h) return '온정'; return '정수';
+  }
+  function width(m){ var w = parseInt(String(m.specs['크기(WDH)'] || '').replace(/,/g,''), 10); return isNaN(w) ? 9999 : w; }
+  function cheapest6(m){ var v = fee(m,72,'방문'), s = fee(m,72,'자가'); return Math.min(v ? v.f : 1e9, s ? s.f : 1e9); }
+
+  function priceBox(m, type){
+    var c = fee(m, 72, type);
+    if(!c) return '<div class="pbox na"><div class="k">'+type+'관리 6년</div><div class="n">선택 불가</div></div>';
+    return '<div class="pbox"><div class="k">'+type+'관리 6년 · '+esc(c.c)+'</div><div class="v">'+won(c.f)+'</div><div class="n">'+won(net(c.f))+'<small>/월</small></div></div>';
+  }
+  function specRows(m){
+    var order = ['정수기능(상세)','제품 유형','크기(WDH)','무게(Kg)','색상','정수타입','필터종류','필터개수(개)','살균방식','살균부위','직수관 재질','저수조형 재질','위생기능','에너지 소비효율','소비전력','조작기능','부가기능'];
+    return order.filter(function(k){ return m.specs[k]; }).map(function(k){
+      return '<tr><th>'+esc(k.replace('(개)','').replace('(Kg)','').replace('(WDH)',' (폭×깊이×높이)'))+'</th><td>'+esc(m.specs[k])+'</td></tr>';
+    }).join('');
+  }
+  function feeTable(m){
+    var rows = m.cfg.slice().sort(function(a,b){ return b.m - a.m || a.f - b.f; }).map(function(c){
+      return '<tr><td>'+(c.m/12)+'년</td><td>'+c.t+' · '+esc(c.c)+'</td><td class="r">'+won(c.f)+'</td><td class="r">'+won(net(c.f))+'</td></tr>';
+    }).join('');
+    return '<table><thead><tr><th>약정</th><th>관리</th><th class="r">정가</th><th class="r">할인 후</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  }
+  function card(m){
+    var mine = m.model === MINE;
+    var imgs = m.gallery.map(function(g, i){ return '<img loading="lazy" src="'+IMG+esc(g)+'" alt="'+esc(m.name)+' 사진 '+(i+1)+'">'; }).join('');
+    var tags = [funcKey(m), m.specs['제품 유형'], m.specs['크기(WDH)'] ? '폭 '+width(m)+'mm' : '', m.specs['살균방식'], '후기 '+m.reviews+'건'].filter(Boolean)
+      .map(function(t){ return '<span class="tag">'+esc(t)+'</span>'; }).join('');
+    var sel = picked.indexOf(m.sn) >= 0;
+    return '<div class="card'+(mine?' mine':'')+'">' +
+      '<div class="galwrap"><div class="gal">'+imgs+'</div>'+(mine?'<span class="badge">고민 중인 모델</span>':'')+
+      (m.gallery.length > 1 ? '<div class="dots">사진 '+m.gallery.length+'장 · 옆으로 넘기기</div>' : '')+'</div>' +
+      '<div class="body"><div class="model">'+esc(m.model)+'</div><div class="name">'+esc(m.name)+'</div>' +
+      '<div class="tags">'+tags+'</div>' +
+      '<div class="prices">'+priceBox(m,'방문')+priceBox(m,'자가')+'</div>' +
+      '<details><summary>약정별 요금 전체 보기</summary>'+feeTable(m)+'</details>' +
+      '<details><summary>제품 사양 보기</summary><table>'+specRows(m)+'</table></details>' +
+      '<div class="actions"><button class="btn'+(sel?' sel':'')+'" data-pick="'+m.sn+'">'+(sel?'✓ 비교 담음':'+ 비교')+'</button>' +
+      '<a class="btn" target="_blank" rel="noopener" href="https://www.ajd.co.kr/electronics/overview/4020/detail/'+m.sn+'">아정당에서 보기</a></div>' +
+      '</div></div>';
+  }
+  function render(){
+    var L = M.filter(function(m){
+      return (st.type === 'all' || funcKey(m) === st.type) && (st.form === 'all' || m.specs['제품 유형'] === st.form);
+    });
+    L.sort(function(a,b){
+      if(st.sort === 'review') return b.reviews - a.reviews;
+      if(st.sort === 'size') return width(a) - width(b);
+      return cheapest6(a) - cheapest6(b);
+    });
+    document.getElementById('count').textContent = L.length + '개 모델';
+    document.getElementById('list').innerHTML = L.map(card).join('');
+    updateBar();
+  }
+  function updateBar(){
+    var bar = document.getElementById('cmpBar');
+    bar.classList.toggle('show', picked.length > 0);
+    document.getElementById('cmpTxt').textContent = picked.length + '개 담음 (최대 3개)';
+  }
+  function chips(id, key){
+    var el = document.getElementById(id);
+    el.addEventListener('click', function(e){
+      var b = e.target.closest('.chip'); if(!b) return;
+      el.querySelectorAll('.chip').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on'); st[key] = b.dataset.v; render();
+    });
+  }
+  chips('fType','type'); chips('fForm','form'); chips('fSpend','spend'); chips('fSort','sort');
+
+  document.getElementById('list').addEventListener('click', function(e){
+    var b = e.target.closest('[data-pick]'); if(!b) return;
+    var sn = Number(b.dataset.pick), i = picked.indexOf(sn);
+    if(i >= 0) picked.splice(i,1);
+    else { if(picked.length >= 3) picked.shift(); picked.push(sn); }
+    render();
+  });
+  document.getElementById('cmpClear').onclick = function(){ picked = []; render(); };
+  document.getElementById('cmpClose').onclick = function(){ document.getElementById('cmp').classList.remove('open'); };
+  document.getElementById('cmpGo').onclick = function(){
+    var P = picked.map(function(sn){ return M.filter(function(m){ return m.sn === sn; })[0]; });
+    function row(label, fn){ return '<tr><th>'+label+'</th>'+P.map(function(m){ return '<td>'+fn(m)+'</td>'; }).join('')+'</tr>'; }
+    function p6(m, t){ var c = fee(m,72,t); return c ? '<span class="n">'+won(net(c.f))+'</span><br><span style="color:var(--sub)">정가 '+won(c.f)+'</span>' : '–'; }
+    function tot(m, t){ var c = fee(m,72,t); return c ? won(net(c.f)*72) : '–'; }
+    function sp(k){ return function(m){ return esc(m.specs[k] || '–'); }; }
+    var html = '<table>' +
+      row('', function(m){ return '<img src="'+IMG+esc(m.gallery[0])+'" alt=""><br><b>'+esc(m.model)+'</b>'; }) +
+      row('제품명', function(m){ return esc(m.name); }) +
+      row('방문 6년', function(m){ return p6(m,'방문'); }) +
+      row('자가 6년', function(m){ return p6(m,'자가'); }) +
+      row('6년 합계(방문)', function(m){ return tot(m,'방문'); }) +
+      row('6년 합계(자가)', function(m){ return tot(m,'자가'); }) +
+      row('기능', sp('정수기능(상세)')) + row('형태', sp('제품 유형')) + row('크기', sp('크기(WDH)')) +
+      row('무게', sp('무게(Kg)')) + row('필터', function(m){ return esc((m.specs['필터종류']||'')+' '+(m.specs['필터개수(개)']||'')); }) +
+      row('살균', sp('살균방식')) + row('직수관', sp('직수관 재질')) + row('위생기능', sp('위생기능')) +
+      row('조작', sp('조작기능')) + row('부가기능', sp('부가기능')) + row('후기', function(m){ return m.reviews + '건'; }) +
+      '</table><p style="font-size:12px;color:var(--sub);padding:4px">할인 후 요금은 롯데카드 "' + document.querySelector('#fSpend .on').textContent + '" 기준이에요. 표는 옆으로 밀어서 볼 수 있어요.</p>';
+    document.getElementById('cmpBody').innerHTML = html;
+    document.getElementById('cmp').classList.add('open');
+  };
+
+  fetch('models.json').then(function(r){ return r.json(); }).then(function(d){
+    M = d.models;
+    document.getElementById('sub').textContent = '아정당에 올라온 LG 퓨리케어 정수기 ' + M.length + '종, 6년 약정 기준 (' + d.updated + ' 조회)';
+    var q = new URLSearchParams(location.search).get('pick');
+    if(q){ q.split(',').forEach(function(mod){ M.forEach(function(m){ if(m.model === mod && picked.length < 3) picked.push(m.sn); }); }); }
+    render();
+  }).catch(function(){ document.getElementById('list').innerHTML = '<div class="note">모델 정보를 불러오지 못했어요. 새로고침해 주세요.</div>'; });
+})();
+</script>
+</body>
+</html>
